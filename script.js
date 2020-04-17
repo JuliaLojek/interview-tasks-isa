@@ -73,9 +73,12 @@ function createArr(str) {
 function handleClick(value) {
   const dataObject = (createObject(createArr(value)));
   const dataArrays = Object.entries(dataObject);
-  console.log(dataArrays);
-  resultBox.innerHTML = dataArrays;
+  resultBox.innerHTML = `
+    average: ${dataObject.average} <br>
+    median: ${dataObject.median} <br>
+    min: ${dataObject.min} <br>
+    max: ${dataObject.max}
+  `
 }
 
 button.addEventListener("click", () => handleClick(input.value));
-
